@@ -1,0 +1,26 @@
+# /etc/conf.d/MyTicketCoind: config file for /etc/init.d/MyTicketCoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/MyTicketCoin/MyTicketCoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/MyTicketCoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/MyTicketCoind.pid"
+
+# Where to write MyTicketCoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/MyTicketCoind"
+
+# User and group to own MyTicketCoind process
+#BITCOIND_USER="MyTicketCoin"
+#BITCOIND_GROUP="MyTicketCoin"
+
+# Path to MyTicketCoind executable
+#BITCOIND_BIN="/usr/bin/MyTicketCoind"
+
+# Nice value to run MyTicketCoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

@@ -1,0 +1,26 @@
+[Unit]
+Description=MyTicketCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=MyTicketCoin
+Group=MyTicketCoin
+
+Type=forking
+PIDFile=/var/lib/MyTicketCoind/MyTicketCoind.pid
+
+ExecStart=/usr/bin/MyTicketCoind -daemon -pid=/var/lib/MyTicketCoind/MyTicketCoind.pid \
+          -conf=/etc/MyTicketCoin/MyTicketCoin.conf -datadir=/var/lib/MyTicketCoind
+
+ExecStop=-/usr/bin/MyTicketCoin-cli -conf=/etc/MyTicketCoin/MyTicketCoin.conf \
+         -datadir=/var/lib/MyTicketCoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
