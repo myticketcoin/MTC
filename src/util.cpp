@@ -418,7 +418,7 @@ boost::filesystem::path GetDefaultDataDir()
 // Unix: ~/.MyTicketCoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "MyTicketCoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "MTC";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -430,10 +430,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "MyTicketCoin";
+    return pathRet / "MTC";
 #else
     // Unix
-    return pathRet / ".MyTicketCoin";
+    return pathRet / ".MTC";
 #endif
 #endif
 }
